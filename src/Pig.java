@@ -25,9 +25,34 @@ public class Pig {
     }
 
     // Implement your solution here!
-    public static String pigLatin(String sentence) {
-        return null;
+     public static String pigLatin(String sentence){
+        String [] splitSent= sentence.split(" ");
+            String newSent = "";
+            for(String word: splitSent){
+               newSent += pigLatinOneWord(word);
+               newSent += " ";
+              
+                
+            }
+             return newSent.substring(0,newSent.length()-1);
+            
     }
+    private static String pigLatinOneWord(String word) {
+        char firstLetter=word.charAt(0);
+        String newWord = "";
+        //for(String word: splitSent){
+            if(firstLetter == 'a' || firstLetter == 'e' || firstLetter == 'i' || firstLetter == 'o' || firstLetter == 'u' ){
+                newWord = word;
+                    return newWord;
+            }else{
+                newWord = word.substring(1)+firstLetter+"ay";
+                return newWord;
+            }
+                //return newWord;
+       // }
+    }
+
+   
 
 
 
