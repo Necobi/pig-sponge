@@ -33,20 +33,21 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    //char firstLetter = sentence.charAt(0);
-    //firstLetter=Character.toLowerCase(firstLetter);
-    //Take an empty string 
     char [] letters=sentence.toCharArray();
-    //String [] newWord;
-    // go trhough each letter of the word
+    int count = 0;
     for(int i=0; i<letters.length; i++){
       if(letters[i]==' '){
-        i++;
-      } if (i%2==0){
-        letters[i]=Character.toLowerCase(letters[i]);
+        count=0;
       }else{
+       if(count%2==0){
+        letters[i]=Character.toLowerCase(letters[i]);
+       }else{
         letters[i]=Character.toUpperCase(letters[i]);
+       }
+       count++;
       }
+       //count++;
+      
     }  
      //newWord+=sentence;
     
@@ -54,6 +55,8 @@ public class Sponge {
     String newSent = new String(letters);
      return newSent;
     }
+   
+
     //if the first letter is uppercase change it to a lowercase letter then capitalize the next letter
     
     //if the first letter is lowercase leave it then capitalize next letter
